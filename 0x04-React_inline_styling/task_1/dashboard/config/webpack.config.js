@@ -1,48 +1,14 @@
-const path = require('path');
+// Import the 'fs' (file system) module
+const fs = require('fs');
 
+// Read the content of a file asynchronously
+fs.readFile('example.txt', 'utf8', (err, data) => {
+    // Handle errors, if any
+    if (err) {
+        console.error('Error reading the file:', err);
+        return;
+    }
 
-module.exports = {
-	mode: 'development',
-	entry: './src/index.js',
-	output: {
-		filename: 'bundle.js',
-		path: path.resolve('./dist')
-	},
-	module: {
-		rules: [
-			{
-				test: /\.css$/,
-				use: ['style-loader', 'css-loader']
-			},
-			{
-				test: /\.(png|jpe?g|gif)$/i,
-				use: [
-					'file-loader',
-					{
-						loader: 'image-webpack-loader',
-						options: {
-							bypassOnDebug: true,
-							disable: true
-						},
-					},
-				],
-			},
-			{
-				test: /\.(js|jsx)$/,
-				exclude: /node_modules/,
-				use: {
-					loader: 'babel-loader',
-					options: {
-						presets: ['@babel/preset-env', '@babel/preset-react']
-					}
-				}
-			}
-		]
-	},
-	devtool: 'inline-source-map',
-	devServer: {
-		static: path.resolve('./dist'),
-		compress: true,
-		port: 8564,
-	},
-};
+    // Log the content of the file to the console
+    console.log('File content:', data);
+});
