@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Document Metadata Section -->
+    <!-- Set character set and viewport settings -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <!-- Theme Color and Title -->
+    <!-- Define theme color and title of the web page -->
+    <meta name="theme-color" content="#000000" />
+    <title>React App</title>
+    
+    <!-- Inline CSS Styles -->
+    <!-- Define some inline CSS styles -->
+    <style>
+      :root {
+        --holberton-red: #e1484c;
+      }
+      
+      body {
+        max-width: 90%;
+        margin: 0 auto;
+        position: relative;
+      }
+      
+      div {
+        padding: 2px 8px;
+      }
+      
+      @media (max-width: 900px) {
+        body {
+          max-width: 100%;
+        }
+        #root {
+          padding: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Document Body Section -->
+    <!-- Include the bundled JavaScript file with defer attribute -->
+    <script defer type="text/javascript" src="./bundle.js"></script>
+    
+    <!-- No JavaScript Message -->
+    <!-- Display a message for users with disabled JavaScript -->
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    
+    <!-- Notifications Container -->
+    <!-- Container for notifications -->
+    <div id="root-notifications"></div>
+    
+    <!-- React Root Container -->
+    <!-- Root container for the React application -->
+    <div id="root"></div>
+  </body>
+</html>
